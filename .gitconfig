@@ -1,0 +1,18 @@
+[user]
+  name = Carolina Silva
+  email = carolsilva.acfs@gmail.com
+[core]
+  pager = less
+  editor = nvim
+  excludesfile = ~/.gitignore
+[color]
+  ui = true
+[push]
+  default = current
+[filter "lfs"]
+	process = git-lfs filter-process
+	smudge = git-lfs smudge -- %f
+	clean = git-lfs clean -- %f
+	required = true
+[pull]
+	rebase = false
