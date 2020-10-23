@@ -134,7 +134,6 @@
   "java.format.comments.enabled": true,
   // Python
   "python.languageServer": "Pylance",
-  "python.defaultInterpreterPath": "python3",
   "python.formatting.provider": "autopep8",
   "python.analysis.diagnosticPublishDelay": 0,
   "python.linting.pylintUseMinimalCheckers": false,
