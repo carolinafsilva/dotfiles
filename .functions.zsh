@@ -63,12 +63,6 @@ github() {
             licenses
             return 0
           ;;
-          "public")
-            arguments+=("--public")
-          ;;
-          "directory")
-            directory="${OPTARG}"
-          ;;
           *)
           echo "$0: Invalid option or missing argument: --${OPTARG}"
           help $0
