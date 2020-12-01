@@ -103,3 +103,6 @@ fi
 
 test -r ${HOME}/.opam/opam-init/init.zsh && \
 . ${HOME}/.opam/opam-init/init.zsh &> /dev/null || true
+
+# Haskell
+export PATH="$HOME/.cabal/bin:$PATH"
