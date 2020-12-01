@@ -20,15 +20,29 @@ cdf() {
 
 github() {
     help () {
-    echo "usage: $1 [ -i gitignore ] [ -l license ]"
-    echo
-    echo "  --help          - Show this help menu"
-    echo
-    echo "  --gitignores    - Show available gitignores"
-    echo "  --licenses      - Show available licenses"
-    echo
-    echo "  -i <gitignore>  - Specify gitignore"
-    echo "  -l <license>    - Specify license"
+      echo "Create a new GitHub repository"
+      echo
+      echo "USAGE"
+      echo "  $1 [options] [flags]"
+      echo
+      echo "OPTIONS"
+      echo "  -r string    - Specify repository name"
+      echo "  -d string    - Specify description"
+      echo "  -h string    - Specify homepage"
+      echo
+      echo "  -i string    - Specify gitignore"
+      echo "  -l string    - Specify license"
+      echo
+      echo "FLAGS"
+      echo "  --help       - Show this help menu"
+      echo
+      echo "  --gitignores - Show available gitignores"
+      echo "  --licenses   - Show available licenses"
+      echo
+      echo "  --public     - Specify public repository"
+      echo "  --private    - Specify private repository"
+      echo "  --internal   - Specify internal repository"
+      echo
   }
 
   gitignores () {
@@ -41,13 +55,27 @@ github() {
     jq --raw-output ".[].key"
   }
 
-  while getopts ":i:l:-:" option; do
+  homepage=""
+  description=""
+  visibility="--private"
+  repository="$(basename $(pwd))"
+
+  while getopts ":i:l:r:d:h:-:" option; do
     case "${option}" in
       "i")
         gitignore="${OPTARG}"
         ;;
       "l")
         license="${OPTARG}"
+        ;;
+      "r")
+        repository="${OPTARG}"
+        ;;
+      "d")
+        description="${OPTARG}"
+        ;;
+      "h")
+        homepage="${OPTARG}"
         ;;
       "-")
         case "${OPTARG}" in
@@ -63,6 +91,15 @@ github() {
             licenses
             return 0
           ;;
+          "public")
+            visibility="--public"
+          ;;
+          "private")
+            visibility="--private"
+          ;;
+          "internal")
+            visibility="--internal"
+          ;;
           *)
           echo "$0: Invalid option or missing argument: --${OPTARG}"
           help $0
@@ -77,11 +114,6 @@ github() {
         ;;
     esac
   done
-
-  [[ $(git rev-parse --git-dir 2>/dev/null) ]] && {
-    echo "$0: Already in a git repository"
-    return 1
-  }
 
   [[ -n ${gitignore} ]] && {
     curl -sfL "https://api.github.com/gitignore/templates/${gitignore}" |\
@@ -104,7 +136,7 @@ github() {
       return 1
     }
     sed -i "" \
-    "s/\[year\]/$(date +"%Y")/g;s/\[fullname\]/$(git config user.name)/g" \
+    -e "s/\[year\]/$(date +"%Y")/g" -e "s/\[fullname\]/$(git config user.name)/g" \
     LICENSE
   }
 
@@ -116,12 +148,16 @@ github() {
     fi
   fi
 
-  git init
+  [[ $(git rev-parse --git-dir 2>/dev/null) ]] && {
+    echo "$0: Already in a git repository"
+  } || {
+    echo "$0: Initializing git repository"
+    git init
+    git add .
+    git commit -m 'Initial commit'
+  }
 
-  git add .
-  git commit -m 'Initial commit'
-
-  gh repo create
+  gh repo create ${repository} -h "${homepage}" -d "${description}" ${visibility} --confirm
 
   git push -u origin master
 }
