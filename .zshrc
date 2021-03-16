@@ -106,3 +106,4 @@ test -r ${HOME}/.opam/opam-init/init.zsh && \
 
 # Haskell
 export PATH="$HOME/.cabal/bin:$PATH"
+export PATH=$HOME/Library/Haskell/bin:$PATH
