@@ -58,7 +58,7 @@ github() {
   homepage=""
   description=""
   visibility="--private"
-  repository="$(basename $(pwd))"
+  repository="$(basename "$(pwd)")"
 
   while getopts ":i:l:r:d:h:-:" option; do
     case "${option}" in
@@ -141,7 +141,7 @@ github() {
   }
 
   if [[ ! -f "README.md" ]]; then
-    echo "# $(basename $(pwd))" > README.md
+    echo "# $(basename "$(pwd)")" > README.md
     if [[ -f "LICENSE" ]]; then
       echo >> README.md
       echo "This project is licensed under the ${license} License - see the [LICENSE](LICENSE) file for details" >> README.md

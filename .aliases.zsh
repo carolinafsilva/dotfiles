@@ -10,6 +10,7 @@ alias la='ls -lhA'
 alias l.='ls -lhd .*'
 
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ubuntu='docker run --rm -it -v "$(pwd):/opt" ubuntu:latest'
 
 alias tree='tree -a -I ".git"'
 
