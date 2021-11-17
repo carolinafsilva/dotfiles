@@ -9,16 +9,15 @@ alias ll='ls -lh'
 alias la='ls -lhA'
 alias l.='ls -lhd .*'
 
+alias f='open -a Finder .'
+
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ubuntu='docker run --rm -it -v "$(pwd):/opt" ubuntu:latest'
 
 alias tree='tree -a -I ".git"'
 
 alias code='code -r'
-alias v='vim'
 
 type nvim >/dev/null && {
   alias vim='nvim'
+  alias vi='vim'
 }
-
-alias f='open -a Finder .'
