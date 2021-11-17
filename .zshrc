@@ -100,10 +100,15 @@ if [[ -f ~/.functions.zsh ]]; then
 fi
 
 # Opam
+if [[ ${HOME}/.opam/opam-init/init.zsh ]]; then
+  . ${HOME}/.opam/opam-init/init.zsh &> /dev/null || true
+fi
 
-test -r ${HOME}/.opam/opam-init/init.zsh && \
-. ${HOME}/.opam/opam-init/init.zsh &> /dev/null || true
+export PATH="$HOME/.opam/default/bin:$PATH"
 
 # Haskell
-export PATH="$HOME/.cabal/bin:$PATH"
-export PATH=$HOME/Library/Haskell/bin:$PATH
+if [[ -f "$HOME/.ghcup/env" ]]; then
+  . "$HOME/.ghcup/env"
+fi
+
+export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
