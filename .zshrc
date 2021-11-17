@@ -33,11 +33,11 @@ HISTFILE=~/.zsh_history
 
 # Zsh Plugins
 
-. /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh && {
+. /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh && {
   ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8,bold"
 } || true
 
-. /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh && {
+. /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh && {
   HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="fg=magenta,bold"
   HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="fg=red,bold"
 
@@ -45,7 +45,7 @@ HISTFILE=~/.zsh_history
   bindkey '^[[B' history-substring-search-down
 } || true
 
-. /usr/local/opt/zsh-git-prompt/zshrc.sh && {
+. /opt/homebrew/opt/zsh-git-prompt/zshrc.sh && {
   ZSH_THEME_GIT_PROMPT_PREFIX="["
   ZSH_THEME_GIT_PROMPT_SUFFIX="]"
   ZSH_THEME_GIT_PROMPT_SEPARATOR=""

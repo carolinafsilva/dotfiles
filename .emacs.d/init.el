@@ -29,6 +29,7 @@
 ;; ProofGeneral
 (unless (package-installed-p 'proof-general)
   (package-install 'proof-general))
+
 ;; Startup
 (setq inhibit-startup-screen t)
 
