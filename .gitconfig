@@ -5,9 +5,9 @@
 [gpg]
   program = /usr/local/bin/gpg
 [commit]
-	gpgsign = true
+  gpgsign = true
 [pull]
-	rebase = false
+  rebase = false
 [push]
   default = current
 [color]
@@ -17,7 +17,7 @@
   editor = nvim
   excludesfile = ~/.gitignore
 [filter "lfs"]
-	process = git-lfs filter-process
-	smudge = git-lfs smudge -- %f
-	clean = git-lfs clean -- %f
-	required = true
+  process = git-lfs filter-process
+  smudge = git-lfs smudge -- %f
+  clean = git-lfs clean -- %f
+  required = true
