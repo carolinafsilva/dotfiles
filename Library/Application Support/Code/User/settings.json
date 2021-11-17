@@ -1,19 +1,21 @@
 {
+  // Telemetry
+  "telemetry.telemetryLevel": "off",
   // Window
+  "window.title": "${appName}",
+  "window.autoDetectColorScheme": true,
   "window.restoreFullscreen": true,
-  // Explorer
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
+  // Breadcrumbs
+  "breadcrumbs.symbolPath": "off",
+  "breadcrumbs.enabled": false,
+  "breadcrumbs.icons": false,
   // Files
+  "files.autoSave": "afterDelay",
   "files.simpleDialog.enable": true,
-  "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
   "files.enableTrash": true,
-  "files.associations": {
-    "*.cu": "cpp",
-    "*.cuh": "cpp"
-  },
   "files.exclude": {
     "**/.classpath": true,
     "**/.project": true,
@@ -22,149 +24,181 @@
     "**/__pycache__": true,
     "**/.pytest_cache": true,
     "**/node_modules": true,
-    "**/.stack-work": true
+    "**/_build": true,
   },
-  // Workbench
-  "workbench.tips.enabled": false,
-  "workbench.startupEditor": "none",
-  "workbench.commandPalette.history": 0,
-  "workbench.editor.restoreViewState": true,
-  "workbench.tree.renderIndentGuides": "none",
-  "workbench.list.automaticKeyboardNavigation": false,
-  "workbench.settings.openDefaultSettings": false,
-  "workbench.settings.editor": "json",
-  "breadcrumbs.enabled": false,
   // Theme
-  "workbench.colorTheme": "Material Theme High Contrast",
-  "workbench.iconTheme": "eq-material-theme-icons",
-  "workbench.colorCustomizations": {
-    "activityBarBadge.background": "#2979FF",
-    "activityBar.activeBorder": "#2979FF",
-    "list.activeSelectionForeground": "#2979FF",
-    "list.inactiveSelectionForeground": "#2979FF",
-    "list.highlightForeground": "#2979FF",
-    "scrollbarSlider.activeBackground": "#2979FF50",
-    "editorSuggestWidget.highlightForeground": "#2979FF",
-    "textLink.foreground": "#2979FF",
-    "progressBar.background": "#2979FF",
-    "pickerGroup.foreground": "#2979FF",
-    "tab.activeBorder": "#2979FF",
-    "notificationLink.foreground": "#2979FF",
-    "editorWidget.resizeBorder": "#2979FF",
-    "editorWidget.border": "#2979FF",
-    "settings.modifiedItemIndicator": "#2979FF",
-    "settings.headerForeground": "#2979FF",
-    "panelTitle.activeBorder": "#2979FF",
-    "breadcrumb.activeSelectionForeground": "#2979FF",
-    "menu.selectionForeground": "#2979FF",
-    "menubar.selectionForeground": "#2979FF",
-    "editor.findMatchBorder": "#2979FF",
-    "selection.background": "#2979FF40"
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.preferredLightColorTheme": "Material Theme Lighter",
+  "workbench.preferredDarkColorTheme": "Material Theme High Contrast",
+  "workbench.colorTheme": "Material Theme Lighter",
+  // Workbench
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.commandPalette.history": 0,
+  "workbench.list.automaticKeyboardNavigation": false,
+  "workbench.list.smoothScrolling": true,
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.settings.editor": "json",
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook",
+    "*.pdf": "pdf.view"
   },
-  "materialTheme.accent": "Blue",
-  // Editor
-  "editor.fontFamily": "JetBrains Mono, monospace",
+  // Explorer
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.openEditors.visible": 0,
+  "explorer.sortOrder": "type",
+  // Font
+  "editor.fontFamily": "SF Mono, JetBrains Mono, monospace",
+  "editor.codeLensFontFamily": "SF Mono, JetBrains Mono, monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
+  // Indentation
+  "editor.insertSpaces": true,
   "editor.tabSize": 2,
-  "editor.wordWrap": "on",
-  "editor.wrappingIndent": "deepIndent",
-  "editor.formatOnSaveMode": "modifications",
-  "editor.formatOnPaste": false,
-  "editor.formatOnSave": false,
-  "editor.formatOnType": false,
-  "editor.tabCompletion": "on",
-  "editor.acceptSuggestionOnEnter": "off",
-  // Suggestions
-  "editor.suggestSelection": "recentlyUsedByPrefix",
-  "editor.snippetSuggestions": "top",
-  "editor.wordBasedSuggestions": false,
-  "editor.quickSuggestionsDelay": 0,
-  "editor.suggest.snippetsPreventQuickSuggestions": false,
-  // Visual
-  "editor.minimap.enabled": false,
-  "editor.overviewRulerBorder": false,
-  "editor.selectionHighlight": false,
-  "editor.occurrencesHighlight": false,
-  "editor.renderLineHighlight": "none",
-  "editor.renderWhitespace": "none",
-  "editor.renderIndentGuides": false,
-  "editor.cursorSmoothCaretAnimation": true,
-  "editor.scrollBeyondLastLine": false,
-  "editor.smoothScrolling": true,
   "editor.rulers": [
     {
       "column": 80,
-      "color": "#2979FF40"
     },
     {
       "column": 120,
-      "color": "#2979FF40"
     }
   ],
+  // Wrapping
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "deepIndent",
+  "editor.wrappingStrategy": "advanced",
+  // Format
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  // Automatic
+  "editor.linkedEditing": true,
+  // Suggestions
+  "editor.codeLens": true,
+  "editor.parameterHints.enabled": true,
+  "editor.inlayHints.enabled": true,
+  "editor.tabCompletion": "on",
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.inlineSuggest.enabled": true,
+  "editor.wordBasedSuggestions": false,
+  "editor.quickSuggestionsDelay": 0,
+  "editor.snippetSuggestions": "top",
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.suggest.snippetsPreventQuickSuggestions": true,
+  // Visual
+  "editor.cursorStyle": "line",
+  "editor.cursorBlinking": "phase",
+  "editor.lineNumbers": "on",
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.semanticHighlighting.enabled": true,
+  // Scrolling
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.smoothScrolling": true,
+  // Scrollbar
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.horizontalScrollbarSize": 0,
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  // Minimap
+  "editor.minimap.enabled": false,
+  // Notebook
+  "notebook.lineNumbers": "on",
+  "jupyter.askForKernelRestart": false,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
   // source
   "editor.codeActionsOnSave": {
     "source.organizeImports": true,
-    "source.fixAll": true
+    "source.fixAll": true,
   },
-  // Debug
-  "debug.console.fontFamily": "JetBrains Mono, monospace",
-  "debug.inlineValues": true,
-  // Neovim
-  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-  // Terminal
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.fontFamily": "JetBrains Mono, monospace",
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.showExitAlert": false,
   // Git
-  "diffEditor.ignoreTrimWhitespace": false,
-  "git.postCommitCommand": "sync",
+  "git.allowForcePush": true,
+  "git.useForcePushWithLease": true,
   "git.enableSmartCommit": true,
+  "git.postCommitCommand": "sync",
   "git.confirmSync": false,
   "git.autofetch": true,
+  // Output
+  "[Log]": {
+    "editor.fontSize": 14,
+  },
+  // Debug
+  "debug.console.fontFamily": "SF Mono, JetBrains Mono, monospace",
+  "debug.console.fontSize": 14,
+  "debug.inlineValues": true,
+  // Terminal
+  "terminal.integrated.fontFamily": "SF Mono, JetBrains Mono, monospace",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.showExitAlert": false,
+  "terminal.integrated.gpuAcceleration": "auto",
+  // Extensions
+  "extensions.ignoreRecommendations": true,
   // C
   "C_Cpp.clang_format_fallbackStyle": "Google",
-  "C_Cpp.clang_format_sortIncludes": false,
   "C_Cpp.default.cppStandard": "c++20",
-  "C_Cpp.default.cStandard": "c11",
+  "C_Cpp.default.cStandard": "c17",
   // Java
-  "java.semanticHighlighting.enabled": true,
   "java.referencesCodeLens.enabled": true,
   "java.implementationsCodeLens.enabled": true,
   "java.codeGeneration.generateComments": true,
   "java.completion.guessMethodArguments": true,
-  "java.format.comments.enabled": true,
+  // OCaml
+  "ocaml.sandbox": {
+    "kind": "global"
+  },
+  "[ocaml]": {
+    "editor.defaultFormatter": "ocamllabs.ocaml-platform"
+  },
   // Python
   "python.languageServer": "Pylance",
   "python.formatting.provider": "autopep8",
-  "python.analysis.diagnosticPublishDelay": 0,
-  "python.linting.pylintUseMinimalCheckers": false,
-  "python.testing.pytestArgs": [],
-  "python.testing.unittestEnabled": false,
-  "python.testing.nosetestsEnabled": false,
-  "python.testing.pytestEnabled": true,
-  "jupyter.sendSelectionToInteractiveWindow": true,
-  // OCaml
-  "ocaml.sandbox": {
-    "switch": "default",
-    "kind": "opam"
-  },
-  // Dart
-  "dart.openDevTools": "flutter",
-  // Javascript
+  "python.formatting.autopep8Args": [
+    "--indent-size=2"
+],
+  "python.pythonPath": "python3",
+  // Javascript/Typescript
+  "javascript.referencesCodeLens.showOnAllFunctions": true,
+  "javascript.referencesCodeLens.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  // Markdown
-  "markdown.preview.fontFamily": "JetBrains Mono, monospace",
-  // Extensions
-  "extensions.ignoreRecommendations": true,
-  "liveshare.presence": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  // HTML
+  "html.format.wrapAttributes": "force-aligned",
+  "html.format.templating": true,
+  "files.associations": {
+    "*.ejs": "html"
+  },
+  "emmet.includeLanguages": {
+    "ejs": "html",
+  },
   // CSS
   "css.styleSheets": [
-      "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css",
-      "/style.css",
-      "style.css",
-      "${fileBasenameNoExtension}.css"
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css",
   ],
-  "liveshare.authenticationProvider": "GitHub"
+  // Markdown
+  "markdown.preview.fontFamily": "SF Mono, JetBrains Mono, monospace",
+  "markdown.preview.fontSize": 14,
+  // Project Manager
+  "projectManager.git.baseFolders": [
+    "/Users/fraguinha/GitHub",
+    "/Users/fraguinha/Documents"
+  ],
+  // Gitlens
+  "gitlens.currentLine.enabled": false,
+  // liveshare
+  "liveshare.presence": true,
+  "liveshare.audio.joinCallBehavior": "accept",
+  "liveshare.audio.startCallOnShare": true,
+  "python.defaultInterpreterPath": "/usr/local/bin/python3",
+  "workbench.colorCustomizations": {
+    "[Material Theme Lighter]": {}
+  },
 }
