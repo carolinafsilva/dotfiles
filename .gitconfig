@@ -21,3 +21,5 @@
   smudge = git-lfs smudge -- %f
   clean = git-lfs clean -- %f
   required = true
+[init]
+  defaultBranch = main
